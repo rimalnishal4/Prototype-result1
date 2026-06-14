@@ -3,145 +3,118 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import React from "react";
 import { motion } from "motion/react";
-import { Sparkles, Compass, ShieldAlert, Cpu } from "lucide-react";
+import { Check, Info, FileText, Search, Settings, ShieldAlert, KeyRound, MapPin } from "lucide-react";
 
 export default function ClientRoster() {
-  const clients = [
+  const inclusions = [
     {
-      name: "PayPal",
-      logo: (
-        <svg className="h-8 text-brand-dark filter hover:brightness-125 transition-all" viewBox="0 0 100 32" fill="currentColor">
-          {/* Custom vector PayPal representation */}
-          <path d="M12 4h10c4 0 7 2 7 6s-3 6-7 6h-6v10h-4V4zm4 4v5h2.5c2 0 3-1 3-2.5S20.5 8 18.5 8H16z" />
-          <path d="M30 4h10c4 0 7 2 7 6s-3 6-7 6h-6v10h-4V4zm4 4v5h2.5c2 0 3-1 3-2.5S38.5 8 36.5 8H34z" opacity="0.75" />
-          <text x="50" y="22" className="font-sans font-bold text-[14px]">PayPal</text>
-        </svg>
-      )
+      num: "01",
+      title: "On-Page SEO & Content Optimization",
+      desc: "Injecting high-relevance geo-modifiers into headings, titles, meta tags, and body copies, optimizing your core services pages for localized rankings."
     },
     {
-      name: "Pinterest",
-      logo: (
-        <svg className="h-8 text-brand-dark filter hover:brightness-125 transition-all" viewBox="0 0 100 32" fill="currentColor">
-          {/* Custom vector Pinterest representation */}
-          <circle cx="16" cy="16" r="12" className="fill-none stroke-current stroke-2" />
-          <path d="M16 6c-5 0-9 4-9 9 0 4 2.5 7 5.5 8.5-.1-.8-.1-2 .2-3l1.5-6s-.4-.8-.4-2c0-1.8 1-3.2 2.4-3.2 1.1 0 1.6.8 1.6 1.8 0 1.1-.7 2.8-1 4.4-.3 1.3.7 2.4 2 2.4 2.4 0 4.2-2.5 4.2-6.2 0-3.2-2.3-5.5-5.6-5.5s-6.2 2.5-6.2 6.2c0 1.2.5 2.5 1 3.2.1.2.1.3 0 .4l-.4 1.5c0 .2-.2.2-.4.1-1.6-.8-2.6-3-2.6-4.8 0-4 3-7.8 8.4-7.8 4.4 0 7.8 3.1 7.8 7.3 0 4.4-2.8 7.8-6.6 7.8-1.3 0-2.5-.7-3-1.6l-.8 3.2c-.3 1.1-1 2.5-1.5 3.3 1.2.4 2.5.6 3.8.6 5 0 9-4 9-9s-4-9-9-9z" />
-          <text x="36" y="22" className="font-sans font-extrabold text-[13px] tracking-tight">Pinterest</text>
-        </svg>
-      )
+      num: "02",
+      title: "Technical SEO Fixes",
+      desc: "Remedying broken redirect indexes, implementing local JSON-LD schema markup files, fixing slow page loads, and securing responsive mobile views."
     },
     {
-      name: "ŌURA",
-      logo: (
-        <svg className="h-8 text-brand-dark filter hover:brightness-125 transition-all" viewBox="0 0 100 32" fill="currentColor">
-          {/* Custom vector Oura representation */}
-          <circle cx="16" cy="16" r="9" className="fill-none stroke-current stroke-2" />
-          <path d="M11 7h10" className="stroke-current stroke-2" />
-          <text x="34" y="22" className="font-display font-light text-[15px] tracking-[0.25em]">OURA</text>
-        </svg>
-      )
+      num: "03",
+      title: "Google Business Profile Optimization",
+      desc: "Configuring premium primary and secondary categories, uploading geotagged photos, answering customer Q&As, and setting direct messaging triggers."
+    },
+    {
+      num: "04",
+      title: "Local SEO & Citation Building",
+      desc: "Synchronizing your business Name, Address, and Phone (NAP) across 150+ high-tier directories to construct deep algorithmic trust."
+    },
+    {
+      num: "05",
+      title: "Keyword & Competitor Research",
+      desc: "Reverse-engineering your nearest rivals' digital footprints to steal their ranking citations and map out profitable nearby keywords."
+    },
+    {
+      num: "06",
+      title: "Authority & Trust Signals",
+      desc: "Formulating regional press writeups and backlinking signals that certify your business as the supreme service operator in your territory."
     }
   ];
 
-  const services = [
-    {
-      title: "Brand Strategy & Core Identity",
-      description: "We orchestrate deep research, audience segmentation, corporate messaging directives, and unique aesthetic systems that lay the foundations for persistent brand elevation.",
-      points: ["Core Guidelines & Typography", "Motion Branding", "Competitive Grounding"]
-    },
-    {
-      title: "Product Design & Custom UX",
-      description: "Designing websites and cloud dashboard solutions that users embrace. We run visual journeys and coordinate high-frequency interactive canvas designs.",
-      points: ["Dynamic React Blueprints", "Multi-surface Responsive Layouts", "A11y Compliant Systems"]
-    },
-    {
-      title: "Interactive Campaigns",
-      description: "Telling rich, visual stories that provoke action. We develop creative copywriting assets and multi-disciplinary systems that drive performance.",
-      points: ["Art and Video Direction", "Micro-interaction Tuning", "Conversion Optimization"]
-    }
+  const clientLogos = [
+    { name: "Sutton Dental", type: "MEDICAL" },
+    { name: "Oakwood Family Law", type: "LEGAL" },
+    { name: "Birmingham Heating", type: "TRADES" },
+    { name: "London Aesthetic Clin.", type: "CHRONIC CARE" },
   ];
 
   return (
-    <section id="services" className="bg-brand text-brand-dark py-24 px-6 md:px-12 font-sans w-full">
+    <section id="features" className="bg-[#DDF247] text-neutral-950 py-24 px-6 md:px-12 font-sans w-full">
       <div className="max-w-7xl mx-auto">
         
-        {/* Dynamic Client Roster segment */}
-        <div className="mb-24">
-          <span className="text-xs font-mono tracking-[0.25em] opacity-60 uppercase block mb-8">
-            CLIENT ROSTER
+        {/* Simple Trust Logo Line */}
+        <div className="mb-20 pb-12 border-b border-neutral-950/10">
+          <span className="text-xs font-mono tracking-[0.25em] opacity-60 uppercase block mb-6">
+            TRUSTED BY REGIONAL OPERATORS
           </span>
-          <div className="flex flex-col md:flex-row justify-between items-center gap-12 border-t border-brand-dark/15 pt-10">
-            {clients.map((client, sIdx) => (
-              <motion.div
-                key={client.name}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: sIdx * 0.1 }}
-                className="w-full flex justify-center md:justify-start"
-              >
-                {client.logo}
-              </motion.div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 items-center">
+            {clientLogos.map((cl, i) => (
+              <div key={i} className="flex flex-col items-start border-l border-neutral-950/15 pl-4 py-1">
+                <span className="font-display font-extrabold text-sm tracking-tight text-neutral-900">{cl.name}</span>
+                <span className="text-[9px] font-mono opacity-60 mt-0.5 uppercase tracking-wider">{cl.type}</span>
+              </div>
             ))}
           </div>
         </div>
 
-        {/* Soft separating line */}
-        <div className="w-full h-[1px] bg-brand-dark/10 my-16" />
+        {/* Section Title */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start mb-16">
+          <div className="lg:col-span-5">
+            <span className="text-xs font-mono tracking-[0.25em] opacity-60 uppercase block">CAMPAIGN INCLUSIONS</span>
+            <h3 className="text-4xl sm:text-5xl font-sans font-bold tracking-tight mt-3 text-neutral-950 leading-tight">
+              What's Included.
+            </h3>
+            <p className="mt-4 text-neutral-800 text-sm md:text-base leading-relaxed max-w-sm">
+              A comprehensive 41+ point optimization campaign across every ranking factor that matters to the search algorithm.
+            </p>
 
-        {/* Brand Services Segment */}
-        <div>
-          <span className="text-xs font-mono tracking-[0.25em] opacity-60 uppercase block mb-10">
-            SERVICES
-          </span>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-            {/* Major Bold text block matching Screenshot 5 */}
-            <div className="lg:col-span-6">
-              <motion.h3
+            {/* Crucial Access Warning Indicator from slide 3 */}
+            <div className="mt-8 bg-neutral-950 text-white rounded-2xl p-5 border border-neutral-800 flex items-start gap-4">
+              <KeyRound className="w-5 h-5 text-[#DDF247] flex-shrink-0 mt-0.5" />
+              <div>
+                <h4 className="text-xs font-bold uppercase tracking-wider text-white">ACCESS REQUIRED TO EXECUTE:</h4>
+                <p className="text-[11px] text-gray-400 mt-1.5 leading-relaxed">
+                  To complete the optimization checklist, we will guide you on granting connection access to your <strong>Google Business Profile</strong> and <strong>Website Admin Panel</strong>. Let's build together safely.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* List items block */}
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {inclusions.map((inc, index) => (
+              <motion.div
+                key={inc.num}
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold tracking-tight leading-none text-brand-dark"
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                className="bg-white/40 hover:bg-white/60 p-5 rounded-2xl transition-all border border-neutral-900/5 hover:shadow-lg shadow-neutral-900/5 flex flex-col justify-between"
               >
-                We make brands, products, websites, and campaigns.
-              </motion.h3>
-              <p className="mt-6 text-brand-dark/80 max-w-md font-sans text-sm md:text-base leading-relaxed">
-                We design across brand, product, and strategy phases. By combining human intelligence with highly optimized visual systems, we build lasting digital assets.
-              </p>
-            </div>
-
-            {/* Structured service cards */}
-            <div className="lg:col-span-6 flex flex-col gap-8">
-              {services.map((serv, index) => (
-                <motion.div
-                  key={serv.title}
-                  initial={{ opacity: 0, x: 25 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-brand-dark/5 p-6 rounded-2xl border border-brand-dark/10 hover:bg-brand-dark/10 transition-colors"
-                >
-                  <h4 className="text-lg font-bold font-display text-brand-dark flex items-center gap-2">
-                    <span className="text-xs font-mono text-emerald-700 bg-brand p-1 rounded">0{index + 1}</span>
-                    {serv.title}
-                  </h4>
-                  <p className="text-brand-dark/80 text-xs mt-2.5 leading-relaxed">
-                    {serv.description}
-                  </p>
-                  
-                  {/* Point flags */}
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    {serv.points.map((point) => (
-                      <span key={point} className="bg-brand-dark text-brand text-[9px] font-mono tracking-wider py-1 px-2.5 rounded-full uppercase">
-                        {point}
-                      </span>
-                    ))}
+                <div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-[10px] font-mono tracking-wider font-extrabold text-neutral-600 bg-white/50 px-2 py-0.5 rounded">PILLAR {inc.num}</span>
+                    <Check className="w-4 h-4 text-emerald-800" />
                   </div>
-                </motion.div>
-              ))}
-            </div>
+                  <h4 className="font-bold text-sm tracking-tight text-neutral-950 mt-4 leading-snug">
+                    {inc.title}
+                  </h4>
+                  <p className="text-xs text-neutral-800 mt-2 leading-relaxed">
+                    {inc.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
 

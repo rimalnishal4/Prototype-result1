@@ -7,11 +7,12 @@ import { useState } from "react";
 import Header from "./components/Header";
 import NavigationOverlay from "./components/NavigationOverlay";
 import HeroSection from "./components/HeroSection";
-import RecentWork from "./components/RecentWork";
-import RecentRecognition from "./components/RecentRecognition";
+import LocalSEOResults from "./components/LocalSEOResults";
+import GuaranteeAndProcess from "./components/GuaranteeAndProcess";
 import ClientRoster from "./components/ClientRoster";
-import OurPurpose from "./components/OurPurpose";
-import NewsNoteworthy from "./components/NewsNoteworthy";
+import ServicePricing from "./components/ServicePricing";
+import ReviewsSection from "./components/ReviewsSection";
+import FAQSection from "./components/FAQSection";
 import NewsletterFooter from "./components/NewsletterFooter";
 import WhatsAppButton from "./components/WhatsAppButton";
 
@@ -26,17 +27,31 @@ export default function App() {
       {/* Full-screen drawer layout mimicking Screenshot 1 */}
       <NavigationOverlay isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
 
-      {/* Unified page scroll flows */}
+      {/* Unified page scroll flows focused on Local SEO results, pricing, reviews & FAQs */}
       <main>
+        {/* Dynamic visual stage intro */}
         <HeroSection />
-        <RecentWork />
-        <RecentRecognition />
+
+        {/* Real Maps rank trajectories chart & dentist/lawyer outcomes data */}
+        <LocalSEOResults />
+
+        {/* What's Included 41+ checklist & required credentials notice */}
         <ClientRoster />
-        <OurPurpose />
-        <NewsNoteworthy />
+
+        {/* Shield Guarantee gold-circle timeline, risk factors & 4 onboard steps */}
+        <GuaranteeAndProcess />
+
+        {/* Service pricing packages ($500/mo upfront and $399/mo maintenance) */}
+        <ServicePricing />
+
+        {/* Five-star client endorsement reviews */}
+        <ReviewsSection />
+
+        {/* Skepticism barriers breakdown collapsible elements FAQ */}
+        <FAQSection />
       </main>
 
-      {/* Newsletter subscript and client directoy grids */}
+      {/* Newsletter subscript and client directory grids */}
       <NewsletterFooter />
 
       {/* High-fidelity WhatsApp bubble linked to +44 7868 951091 */}

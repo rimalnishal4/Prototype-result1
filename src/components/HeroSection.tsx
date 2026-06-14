@@ -127,7 +127,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-brand-dark tracking-tight leading-tight font-light"
         >
-          We're a <span className="italic block sm:inline font-normal">digital-first</span> creative agency where <span className="font-sans font-normal tracking-tighter text-emerald-600">genius creativity</span> meets conversion.
+          We're a <span className="italic block sm:inline font-normal">results-first</span> growth engine where <span className="font-sans font-normal tracking-tighter text-emerald-600">local search ranking</span> meets guaranteed conversion.
         </motion.h1>
 
         {/* Call to action button matching "View All Work" */}
@@ -142,7 +142,7 @@ export default function HeroSection() {
             onClick={() => document.getElementById("work")?.scrollIntoView({ behavior: "smooth" })}
             className="group flex items-center justify-between gap-6 bg-brand-dark hover:bg-neutral-900 border border-brand-dark text-white font-medium text-sm py-4 px-8 rounded-full shadow-lg hover:shadow-xl cursor-pointer transition-all"
           >
-            <span>View All Work</span>
+            <span>View Our Ranks & Results</span>
             <div className="bg-white/10 rounded-full p-1.5 group-hover:translate-x-2 transition-transform duration-300">
               <ArrowRight className="w-4 h-4 text-brand" />
             </div>
