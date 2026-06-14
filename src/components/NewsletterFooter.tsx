@@ -134,7 +134,6 @@ export default function NewsletterFooter() {
               <li><a href="#" className="hover:text-black transition-colors">Home</a></li>
               <li><a href="#work" className="hover:text-black transition-colors">Work</a></li>
               <li><a href="#services" className="hover:text-black transition-colors">Services</a></li>
-              <li><a href="#news" className="hover:text-black transition-colors">Latest</a></li>
             </ul>
           </div>
 

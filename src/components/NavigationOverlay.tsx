@@ -25,8 +25,6 @@ export default function NavigationOverlay({ isOpen, onClose }: NavigationOverlay
       subItems: ["Brand", "Marketing", "Product"] 
     },
     { title: "About", href: "#about", hasSub: false },
-    { title: "Careers", href: "#careers", hasSub: false },
-    { title: "Latest", href: "#news", hasSub: false },
     { title: "Contact", href: "#contact", hasSub: false },
   ];
 
