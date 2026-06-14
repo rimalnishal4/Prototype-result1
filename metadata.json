@@ -1,0 +1,6 @@
+{
+  "name": "ResultsGenie",
+  "description": "A digital-first creative agency landing page featuring premium typography, high-fidelity motion animations, card structures, and contact via WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
